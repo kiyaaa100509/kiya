@@ -997,6 +997,85 @@ section {
 </section>
 <!-- ================= AKHIR TAMBAHAN BARU 2 ================= -->
 
+<!-- ================= TAMBAHAN BARU 3: ANIMASI AL + LOVE UNTUK KIYA - DI BAWAH VIDEO ================= -->
+<style>
+.al-show{padding:20px 0 110px;position:relative;z-index:1;overflow:hidden}
+.al-show .wrap{width:min(1100px,90%);margin-inline:auto}
+.al-stage{position:relative;max-width:900px;margin:0 auto;background:linear-gradient(180deg,#fff 0%,#fff4f7 55%,#ffeef3 100%);border:1px solid #f0e3e8;border-radius:28px;box-shadow:0 22px 55px #b97e9722;overflow:hidden;padding:44px 20px 34px;text-align:center}
+.al-stage::before{content:"";position:absolute;inset:0;background:radial-gradient(520px 220px at 50% 0%,#ffdce830,transparent 70%);pointer-events:none}
+.al-eyebrow{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#d28da5;margin-bottom:16px;position:relative}
+.al-big{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;position:relative}
+.al-letter{font-family:'Playfair Display',serif;font-weight:400;font-size:clamp(64px,16vw,124px);line-height:1;letter-spacing:-2px;color:#58434a;display:inline-block;animation:alFloat 3.2s ease-in-out infinite;will-change:transform}
+.al-letter:nth-child(2){animation-delay:.4s}
+.al-letter.glow{background:linear-gradient(180deg,#e58aa8,#d28da5);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 10px 22px #e58aa855)}
+.al-heart-big{position:relative;width:clamp(78px,20vw,128px);height:clamp(78px,20vw,128px);display:grid;place-items:center;animation:alBeat 1.6s ease-in-out infinite;cursor:pointer}
+.al-heart-big:active{transform:scale(.92)}
+.al-heart-img{width:100%;height:100%;object-fit:cover;clip-path:path('M 50 88 C 20 62 2 44 2 24 C 2 9 14 0 26 0 C 36 0 44 6 50 16 C 56 6 64 0 74 0 C 86 0 98 9 98 24 C 98 44 80 62 50 88 Z');transform:scale(1.02);filter:drop-shadow(0 14px 24px #e58aa866);animation:alHeartGlow 2.2s ease-in-out infinite}
+.al-heart-fallback{position:absolute;inset:0;display:grid;place-items:center;font-size:clamp(56px,15vw,96px);color:#e87a9c;display:none}
+.al-sub{margin-top:18px;font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(20px,5vw,30px);color:#8c6c7b;animation:alFadeUp 1s ease both .2s}
+.al-sub b{color:#d18ba4;font-style:normal}
+.al-desc{max-width:480px;margin:12px auto 0;color:#9c858e;font-size:12.5px;line-height:1.9;animation:alFadeUp 1s ease both .4s}
+.al-progress{max-width:420px;margin:24px auto 0;text-align:left}
+.al-progress-top{display:flex;justify-content:space-between;font-size:11px;letter-spacing:2px;color:#b49ca6;margin-bottom:8px}
+.al-progress-top b{color:#d28da5;letter-spacing:1px}
+.al-bar{height:10px;background:#fbe4ec;border-radius:20px;overflow:hidden;box-shadow:inset 0 1px 3px #00000010}
+.al-bar-fill{height:100%;width:0%;border-radius:20px;background:linear-gradient(90deg,#f2a7bd,#e87a9c,#d28da5);box-shadow:0 0 16px #e87a9c88;transition:width .6s cubic-bezier(.22,1,.36,1)}
+.al-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+.al-btn{padding:13px 22px;border-radius:50px;font-size:13px;font-weight:600;transition:.25s}
+.al-btn:active{transform:scale(.96)}
+.al-btn.primary{background:#d99aaf;color:#fff;box-shadow:0 10px 24px #d99aaf40}
+.al-btn.ghost{background:#fff;color:#d28da5;border:1px solid #f0d5df}
+.al-floating{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.al-float-heart{position:absolute;bottom:-30px;opacity:0;animation:alRise linear forwards;will-change:transform,opacity}
+.al-spark{position:absolute;width:6px;height:6px;border-radius:50%;background:#ffd6e2;box-shadow:0 0 12px #ffb3c8;opacity:0;animation:alSpark 2.8s ease-in-out infinite}
+.al-marquee{margin-top:22px;overflow:hidden;white-space:nowrap;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.al-marquee-inner{display:inline-block;animation:alMarquee 18s linear infinite;font-family:'Playfair Display',serif;font-style:italic;font-size:15px;color:#c89aae;padding-left:100%}
+@keyframes alFloat{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-10px) rotate(1.5deg)}}
+@keyframes alBeat{0%,100%{transform:scale(1)}25%{transform:scale(1.12)}40%{transform:scale(1.02)}55%{transform:scale(1.18)}70%{transform:scale(1)}}
+@keyframes alHeartGlow{0%,100%{filter:drop-shadow(0 14px 24px #e58aa866)}50%{filter:drop-shadow(0 18px 34px #e87a9ccc)}}
+@keyframes alFadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes alRise{0%{transform:translateY(0) translateX(0) rotate(0deg) scale(.6);opacity:0}10%{opacity:.95}100%{transform:translateY(-560px) translateX(30px) rotate(28deg) scale(1.1);opacity:0}}
+@keyframes alSpark{0%,100%{opacity:0;transform:scale(.6)}50%{opacity:1;transform:scale(1.2)}}
+@keyframes alMarquee{from{transform:translateX(0)}to{transform:translateX(-100%)}}
+@keyframes alShine{0%{background-position:0% 50%}100%{background-position:200% 50%}}
+.al-shine{background:linear-gradient(90deg,#d28da5,#ff9eb8,#d28da5);background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:alShine 3s linear infinite}
+@media(max-width:480px){.al-stage{padding:36px 14px 28px;border-radius:22px}.al-big{gap:10px}}
+@media(prefers-reduced-motion:reduce){.al-letter,.al-heart-big,.al-heart-img,.al-marquee-inner{animation:none!important}.al-float-heart,.al-spark{display:none!important}}
+</style>
+
+<section class="al-show" id="alLoveShow">
+  <div class="wrap">
+    <div class="al-stage reveal" id="alStage">
+      <div class="al-floating" id="alFloating"></div>
+      <div class="al-eyebrow">presentasi animasi 100% • for kiya</div>
+      <div class="al-big" aria-label="AL love KIYA">
+        <span class="al-letter">A</span>
+        <span class="al-letter glow">L</span>
+        <div class="al-heart-big" id="alHeartBig" title="Tap love-nya ♡">
+          <img class="al-heart-img" id="alHeartImg" src="photos/8.jpg" alt="Love for Kiya" loading="lazy" onerror="this.style.display='none';document.getElementById('alHeartFallback').style.display='grid';">
+          <div class="al-heart-fallback" id="alHeartFallback">♥</div>
+        </div>
+        <span class="al-letter">K</span>
+        <span class="al-letter">I</span>
+        <span class="al-letter">Y</span>
+        <span class="al-letter glow">A</span>
+      </div>
+      <div class="al-sub">AL <span class="al-shine">♥</span> <b>KIYA</b> — always, 100%</div>
+      <p class="al-desc">ini bukan cuma animasi. ini presentasi kecil, kalau rasa sayang itu 100% — nggak setengah-setengah, nggak sementara. buat kiya, selalu.</p>
+      <div class="al-progress">
+        <div class="al-progress-top"><span>LOVE METER</span><b id="alPercent">0% • KIYA</b></div>
+        <div class="al-bar"><div class="al-bar-fill" id="alBarFill"></div></div>
+      </div>
+      <div class="al-btns">
+        <button class="al-btn primary" id="alReplayBtn">↻ Putar Lagi Animasinya</button>
+        <button class="al-btn ghost" id="alBurstBtn">♡ Ledakin Love</button>
+      </div>
+      <div class="al-marquee"><div class="al-marquee-inner">AL ♥ KIYA &nbsp;•&nbsp; 100% &nbsp;•&nbsp; always you &nbsp;•&nbsp; AL ♥ KIYA &nbsp;•&nbsp; 100% &nbsp;•&nbsp; for kiya, always &nbsp;•&nbsp;</div></div>
+    </div>
+  </div>
+</section>
+<!-- ================= AKHIR TAMBAHAN BARU 3 ================= -->
+
 <footer class="footer">
   MADE WITH LOVE ♡
 </footer>
@@ -1381,6 +1460,111 @@ section {
     else if (video.requestFullscreen) video.requestFullscreen();
     else if (video.webkitEnterFullscreen) video.webkitEnterFullscreen();
   });
+})();
+</script>
+
+<!-- SCRIPT TAMBAHAN 3: ANIMASI AL + LOVE KIYA - ANTI ERROR -->
+<script>
+(() => {
+  const stage = document.getElementById('alStage');
+  const floating = document.getElementById('alFloating');
+  const barFill = document.getElementById('alBarFill');
+  const percent = document.getElementById('alPercent');
+  const replayBtn = document.getElementById('alReplayBtn');
+  const burstBtn = document.getElementById('alBurstBtn');
+  const heartBig = document.getElementById('alHeartBig');
+  if (!stage || !floating || !barFill) return;
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const hearts = ['♥','♡','💖','💗','💕','✦'];
+  const colors = ['#e87a9c','#f2a7bd','#d28da5','#ffb3c8','#ff8fab'];
+
+  function spawnHeart(big){
+    try{
+      const s = document.createElement('span');
+      s.className = 'al-float-heart';
+      s.textContent = hearts[Math.floor(Math.random()*hearts.length)];
+      const size = big ? 18 + Math.random()*22 : 12 + Math.random()*16;
+      s.style.left = (Math.random()*92) + '%';
+      s.style.fontSize = size + 'px';
+      s.style.color = colors[Math.floor(Math.random()*colors.length)];
+      s.style.animationDuration = (big ? 2.2 : 3.2 + Math.random()*2.5) + 's';
+      s.style.animationDelay = (Math.random()*0.4) + 's';
+      floating.appendChild(s);
+      setTimeout(()=>{ if(s.parentNode) s.parentNode.removeChild(s); }, 6000);
+    }catch(e){}
+  }
+  function spawnSpark(){
+    try{
+      const s = document.createElement('span');
+      s.className = 'al-spark';
+      s.style.left = (Math.random()*94) + '%';
+      s.style.top = (Math.random()*80) + '%';
+      s.style.animationDelay = (Math.random()*2) + 's';
+      floating.appendChild(s);
+      setTimeout(()=>{ if(s.parentNode) s.parentNode.removeChild(s); }, 3500);
+    }catch(e){}
+  }
+  function startHearts(){
+    if(reduced) return;
+    for(let i=0;i<6;i++) spawnSpark();
+    const iv = setInterval(()=>{ spawnHeart(false); }, 700);
+    stage._alInterval = iv;
+  }
+  function animateBar(){
+    if(!barFill || !percent) return;
+    barFill.style.width = '0%';
+    if(percent) percent.textContent = '0% • KIYA';
+    let v = 0;
+    if(stage._alBarTimer) clearInterval(stage._alBarTimer);
+    stage._alBarTimer = setInterval(()=>{
+      v += 2 + Math.random()*4;
+      if(v >= 100){ v = 100; clearInterval(stage._alBarTimer); }
+      barFill.style.width = v + '%';
+      if(percent) percent.textContent = Math.floor(v) + '% • KIYA';
+      if(v === 100 && percent) percent.textContent = '100% • KIYA ♡';
+    }, 40);
+  }
+  function burst(n){
+    if(reduced) return;
+    for(let i=0;i<(n||14);i++){ setTimeout(()=>spawnHeart(true), i*60); }
+  }
+  function replay(){
+    animateBar();
+    burst(10);
+    const letters = stage.querySelectorAll('.al-letter');
+    letters.forEach((el)=>{
+      el.style.animation = 'none';
+      void el.offsetWidth;
+      el.style.animation = '';
+    });
+    if(heartBig){
+      heartBig.style.animation = 'none';
+      void heartBig.offsetWidth;
+      heartBig.style.animation = '';
+    }
+  }
+
+  // Jalanin pas section keliatan - pakai IntersectionObserver, fallback langsung jalan
+  let started = false;
+  function startOnce(){
+    if(started) return; started = true;
+    animateBar();
+    startHearts();
+    setTimeout(()=>burst(8), 600);
+  }
+  if('IntersectionObserver' in window && !reduced){
+    const ob = new IntersectionObserver((entries)=>{
+      entries.forEach(en=>{ if(en.isIntersecting){ startOnce(); ob.disconnect(); } });
+    },{threshold:0.25});
+    ob.observe(stage);
+  } else {
+    startOnce();
+    if(!reduced) animateBar();
+  }
+
+  if(replayBtn) replayBtn.addEventListener('click', replay);
+  if(burstBtn) burstBtn.addEventListener('click', ()=>burst(18));
+  if(heartBig) heartBig.addEventListener('click', ()=>burst(12));
 })();
 </script>
 </body>
