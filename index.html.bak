@@ -1047,12 +1047,12 @@ section {
   <div class="wrap">
     <div class="al-stage reveal" id="alStage">
       <div class="al-floating" id="alFloating"></div>
-      <div class="al-eyebrow">presentasi animasi 100% • for kiya</div>
+      <div class="al-eyebrow">rasa sayang ku for kiya</div>
       <div class="al-big" aria-label="AL love KIYA">
         <span class="al-letter">A</span>
         <span class="al-letter glow">L</span>
         <div class="al-heart-big" id="alHeartBig" title="Tap love-nya ♡">
-          <img class="al-heart-img" id="alHeartImg" src="photos/8.jpg" alt="Love for Kiya" loading="lazy" onerror="this.style.display='none';document.getElementById('alHeartFallback').style.display='grid';">
+          <img class="al-heart-img" id="alHeartImg" src="photos/4.jpg" alt="Love for Kiya" loading="lazy" onerror="this.style.display='none';document.getElementById('alHeartFallback').style.display='grid';">
           <div class="al-heart-fallback" id="alHeartFallback">♥</div>
         </div>
         <span class="al-letter">K</span>
@@ -1061,13 +1061,13 @@ section {
         <span class="al-letter glow">A</span>
       </div>
       <div class="al-sub">AL <span class="al-shine">♥</span> <b>KIYA</b> — always, 100%</div>
-      <p class="al-desc">ini bukan cuma animasi. ini presentasi kecil, kalau rasa sayang itu 100% — nggak setengah-setengah, nggak sementara. buat kiya, selalu.</p>
+      <p class="al-desc">rasa sayang ini se iring bukannya berkurang tapi bertambah, saya tidaa tau ujung nya sampai mana, tapi saya selalu berharap yang terbaik untuk kita berdua, semoga kamu selalu bahagia bersama ku, dan semoga aku selalu bisa membahagiakan kamu, sayang.</p>
       <div class="al-progress">
-        <div class="al-progress-top"><span>LOVE METER</span><b id="alPercent">0% • KIYA</b></div>
+        <div class="al-progress-top"><span>LOVE FOR U</span><b id="alPercent">0% • KIYA</b></div>
         <div class="al-bar"><div class="al-bar-fill" id="alBarFill"></div></div>
       </div>
       <div class="al-btns">
-        <button class="al-btn primary" id="alReplayBtn">↻ Putar Lagi Animasinya</button>
+        <button class="al-btn primary" id="alReplayBtn">↻ Ulangi</button>
         <button class="al-btn ghost" id="alBurstBtn">♡ Ledakin Love</button>
       </div>
       <div class="al-marquee"><div class="al-marquee-inner">AL ♥ KIYA &nbsp;•&nbsp; 100% &nbsp;•&nbsp; always you &nbsp;•&nbsp; AL ♥ KIYA &nbsp;•&nbsp; 100% &nbsp;•&nbsp; for kiya, always &nbsp;•&nbsp;</div></div>
